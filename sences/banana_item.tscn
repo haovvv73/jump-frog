@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://c247vy777sli5"]
+
+[ext_resource type="Texture2D" uid="uid://dw4xjgvnirvji" path="res://src/Bananas.png" id="1_tep43"]
+[ext_resource type="Script" uid="uid://c4dh254w5bf83" path="res://sences/banana_item.gd" id="1_vhltg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vhltg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l74qw"]
+atlas = ExtResource("1_tep43")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcvlo"]
+atlas = ExtResource("1_tep43")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytgin"]
+atlas = ExtResource("1_tep43")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge5mc"]
+atlas = ExtResource("1_tep43")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbuo"]
+atlas = ExtResource("1_tep43")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ini1v"]
+atlas = ExtResource("1_tep43")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cpgd"]
+atlas = ExtResource("1_tep43")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tign8"]
+atlas = ExtResource("1_tep43")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxvdb"]
+atlas = ExtResource("1_tep43")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx767"]
+atlas = ExtResource("1_tep43")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37iao"]
+atlas = ExtResource("1_tep43")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehyci"]
+atlas = ExtResource("1_tep43")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcsc"]
+atlas = ExtResource("1_tep43")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me3xa"]
+atlas = ExtResource("1_tep43")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn58q"]
+atlas = ExtResource("1_tep43")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfirm"]
+atlas = ExtResource("1_tep43")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uix60"]
+atlas = ExtResource("1_tep43")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6eep6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l74qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcvlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytgin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge5mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ini1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cpgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tign8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxvdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx767")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37iao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehyci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me3xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn58q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfirm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uix60")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="banana" type="Area2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_vhltg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vhltg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6eep6")
+autoplay = "default"
+frame_progress = 0.916137
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

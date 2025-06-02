@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqn68h6w2pdhs"]
+
+[ext_resource type="Texture2D" uid="uid://d2mv5o8hbgcju" path="res://src/jumpFrog.png" id="1_mha1p"]
+[ext_resource type="Texture2D" uid="uid://bxuv14j8n2y4w" path="res://background/Green.png" id="1_w24vk"]
+[ext_resource type="Script" uid="uid://b51wfutxo0diu" path="res://sences/main_menu.gd" id="1_x0xfc"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_x0xfc")
+
+[node name="bgMenu" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w24vk")
+stretch_mode = 1
+
+[node name="logo" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -403.0
+offset_top = -126.0
+offset_right = 411.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mha1p")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 39.0
+offset_right = 152.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Click Me !"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
